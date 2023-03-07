@@ -1,0 +1,5 @@
+.PSPDFKit-Tool-Button-active,
+.PSPDFKit-Tool-Button-active:hover,
+.PSPDFKit-Layout-Config-Option-Active .PSPDFKit-Layout-Config-Option-Icon {
+  background-color: #102189 !important;
+}

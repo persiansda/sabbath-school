@@ -1,0 +1,32 @@
+{
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+  "i18n-ally.keysInUse": [
+    "time_ago_options.*",
+    "visibility.*"
+  ],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": [
+    "locales"
+  ],
+  "i18n-ally.preferredDelimiter": "_",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.sourceLanguage": "en",
+  "prettier.enable": false,
+  "volar.completion.preferredTagNameCase": "pascal",
+  "volar.completion.preferredAttrNameCase": "kebab",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "node_modules": true,
+    ".nuxt": true,
+    ".output": true,
+  }
+}

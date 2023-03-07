@@ -1,0 +1,10 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+dist
+.DS_Store
+public/assets/js/pspdfkit-lib/*
+public/assets/js/rangy/*
