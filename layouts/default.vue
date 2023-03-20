@@ -15,7 +15,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       <slot />
     </div>
 
-    <AppScrollToTop v-if="scrollPosition > 87" />
+    <Transition name="page">
+      <AppScrollToTop v-if="scrollPosition > 87" />
+    </Transition>
   </div>
 </template>
 
