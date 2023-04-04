@@ -33,6 +33,7 @@ const openIntroduction = ref(false)
 
 <template>
   <div class="mt-4 md:ml-8 md:mr-8 md:mt-0">
+    <OgImageStatic component="AppOgImagePage" :quarterly="data.quarterly" />
     <p class="mb-4 text-3xl font-bold">
       {{ data.quarterly.title }}
     </p>

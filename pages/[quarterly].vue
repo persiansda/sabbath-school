@@ -9,18 +9,44 @@ const route = useRoute()
 
 const { data, pending } = await useApiFetch<ShowQuarterly>(`/quarterlies/${route.params.quarterly}/index.json`)
 
+const title = computed(() => {
+  if (pending.value)
+    return null
+  if (data.value?.quarterly?.title)
+    return data.value.quarterly.title
+  return t('error.404.title')
+})
+
+const description = computed(() => {
+  if (pending.value)
+    return null
+  if (data.value?.quarterly?.description)
+    return data.value.quarterly.description
+  return t('error.404.message')
+})
+
+const image = computed(() => {
+  if (pending.value)
+    return null
+  if (data.value?.quarterly?.cover)
+    return data.value.quarterly.cover
+  return '/assets/images/error.jpg'
+})
+
+useSeoMeta({
+  titleTemplate: `%s | ${t('app.title')}`,
+  title,
+  description,
+  ogImageAlt: title,
+  twitterImageAlt: title,
+  twitterDescription: description,
+})
+
 watchEffect(() => {
   if (!route.params.day) {
     if (!readerStore.sidebar)
       readerStore.toggleSidebar()
   }
-})
-
-useMeta({
-  title: !pending.value ? data.value!.quarterly?.title ?? t('error.404.title') : 'Sabbath School',
-  description: !pending.value ? wordSubstring(data.value!.quarterly?.description ?? t('error.404.message')) : t('app.description'),
-  image: !pending.value ? data.value!.quarterly?.cover ?? '/assets/images/error.jpg' : '/assets/images/cover.jpg',
-  imageAlt: !pending.value ? data.value!.quarterly?.title ?? t('error.404.title') : t('app.title'),
 })
 </script>
 

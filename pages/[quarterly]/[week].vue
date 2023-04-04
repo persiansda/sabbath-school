@@ -80,7 +80,7 @@ onMounted(() => {
               </p>
             </div>
           </div>
-          <NuxtPage :week="currentWeek" :show-pdf="showPdf" :pdfs="week.pdfs" />
+          <NuxtPage :quarterly="data.quarterly" :week="currentWeek" :show-pdf="showPdf" :pdfs="week.pdfs" />
         </div>
       </div>
       <div class="shrink-0 flex justify-center md:justify-start md:flex-col md:items-end md:w-3/12 lg:w-3/12 xl:w-2/12">
