@@ -30,11 +30,11 @@ useMeta({
     <template v-else>
       <div v-if="data?.quarterly" class="my-10 md:flex">
         <div :class="{ hidden: !readerStore.sidebar }" class="shrink-0 flex justify-center md:justify-start md:flex-col md:items-end md:w-3/12 lg:w-3/12 xl:w-2/12">
-          <div :class="{ 'md:text-left': $i18n.localeProperties.dir === 'ltr' }" class="flex md:block w-11/12 md:w-auto ml-4 mr-3 md:ml-0">
+          <div :class="{ 'md:text-left': $i18n.localeProperties.dir === 'ltr' }" class="grid grid-cols-2 md:block w-11/12 md:w-auto ml-4 mr-3 md:ml-0">
             <div :class="{ 'mr-5': $i18n.localeProperties.dir === 'ltr' }">
               <NuxtLink :title="data.quarterly.title" :to="localePath({ name: 'quarterly', params: { quarterly: data.quarterly.id } })" class="w-4/12 mx-auto md:w-auto hover:underline">
                 <SProImg :src="data.quarterly.cover" :alt="data.quarterly.title" :class="{ 'md:mr-4': $i18n.localeProperties.dir === 'ltr' }" class="w-40 rounded shadow-gray-400 shadow-md" />
-                <span class="mt-4 font-bold text-lg text-gray-600 block">
+                <span class="mt-4 font-bold text-lg text-gray-600 block w-3/4">
                   {{ data.quarterly.title }}
                 </span>
               </NuxtLink>
