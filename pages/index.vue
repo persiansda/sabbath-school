@@ -7,8 +7,8 @@ const route = useRoute()
 
 const { data, pending } = useApiFetch<any>('/quarterlies/index.json', {
   fetchOptions: {
-    // add key that every 3 months will change
-    key: `quarterlies-index-${new Date().getFullYear()}-${Math.floor(new Date().getMonth() / 3)}`,
+    // add cache key that every 3 months will change
+    key: `quarterlies:index:${new Date().getFullYear()}-${Math.floor(new Date().getMonth() / 3)}`,
   },
   opts: {
     transform: (data: Quarterly[]) => {
@@ -77,10 +77,6 @@ const groups = computed<QuarterlyWithGroup[]>(() => {
     total: group.quarterlies.length,
     quarterlies: group.slug === t('app.uncategorized') ? group.quarterlies : group.quarterlies.slice(0, 4),
   }))
-})
-
-useMeta({
-  title: t('home.index'),
 })
 </script>
 
