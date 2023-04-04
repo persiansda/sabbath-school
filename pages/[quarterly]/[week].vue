@@ -85,9 +85,6 @@ onMounted(() => {
       </div>
       <div class="shrink-0 flex justify-center md:justify-start md:flex-col md:items-end md:w-3/12 lg:w-3/12 xl:w-2/12">
         <div class="md:block grid grid-cols-3 md:text-right ss-sidebar-sticky">
-          <NuxtLink :to="localePath({ name: 'quarterly', params: { quarterly: route.params.quarterly as string } })" class="hover:underline mb-4 font-bold hidden md:block text-center md:text-right text-lg text-gray-600 mr-3">
-            {{ week.lesson.title }}
-          </NuxtLink>
           <template v-if="!week.lesson.pdfOnly">
             <NuxtLink v-for="item in week.days" :key="item.id" :to="localePath({ name: 'quarterly-week-day', params: { quarterly: route.params.quarterly as string, week: weekId, day: item.id } })" class="flex flex-col hover:bg-gray-200 px-4 py-2 rounded justify-center">
               <p class="text-sm text-gray-500">
@@ -125,7 +122,7 @@ onMounted(() => {
   position: sticky;
   top: 1rem;
   overflow: auto;
-  padding-bottom: 120px;
+  padding-bottom: 10px;
   height: calc(100vh - 1rem);
 
   @media (max-width: 768px) {
