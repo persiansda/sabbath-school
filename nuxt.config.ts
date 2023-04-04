@@ -2,23 +2,12 @@ import { i18n } from './config/i18n'
 
 export default defineNuxtConfig({
 
+  extends: [
+    'nuxt-seo-kit',
+  ],
+
   app: {
     keepalive: true,
-    // pageTransition: {
-    //   name: 'page',
-    //   mode: 'out-in',
-    // },
-    head: {
-      link: [
-        { rel: 'icon', sizes: 'any', href: '/assets/images/favicon.ico' },
-        { rel: 'icon', type: 'image/png', href: '/assets/images/logo.png' },
-        { rel: 'apple-touch-icon', href: '/assets/images/apple-touch-icon.png' },
-      ],
-      meta: [
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'theme-color', content: '#ffffff' },
-      ],
-    },
   },
 
   router: {
@@ -88,6 +77,7 @@ export default defineNuxtConfig({
       },
     },
     prerender: {
+      crawlLinks: false,
       routes: ['/'],
     },
   },

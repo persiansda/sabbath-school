@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
@@ -42,10 +43,12 @@
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
     "translate": "^1.4.1",
-    "typescript": "^5.0.3",
-    "vue3-lottie": "^2.5.0"
+    "typescript": "^5.0.3"
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "dependencies": {
+    "nuxt-seo-kit": "^1.3.6"
   }
 }
