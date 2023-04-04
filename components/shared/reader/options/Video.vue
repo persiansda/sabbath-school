@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { Splide, SplideSlide } from '@splidejs/vue-splide'
 import '@splidejs/vue-splide/css'
 import { useVideoStore } from '~/store/video'
 
