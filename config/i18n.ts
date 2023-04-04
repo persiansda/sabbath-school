@@ -12,7 +12,7 @@ export interface LocaleObjectData extends LocaleObject {
   pluralRule?: PluralizationRule
 }
 
-const buildLocales = () => {
+function buildLocales() {
   const useLocales = Object.values(locales).reduce((acc, data) => {
     acc.push(data)
     return acc
