@@ -15,7 +15,9 @@ export function useApiFetch<T>(
   const runtimeConfig = useRuntimeConfig()
   const { locale } = useI18n()
 
-  return useAsyncData<T>(`${locale.value}-${request}`, () => $fetch(request, {
+  const reqKey = options?.fetchOptions?.key ?? `${locale.value}-${request}`
+
+  return useAsyncData<T>(reqKey, () => $fetch(request, {
     baseURL: `${runtimeConfig.public.apiURL}/${locale.value}`,
     ...options?.fetchOptions as any,
   }), {

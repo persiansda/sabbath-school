@@ -6,6 +6,10 @@ const { t } = useI18n()
 const route = useRoute()
 
 const { data, pending } = useApiFetch<any>('/quarterlies/index.json', {
+  fetchOptions: {
+    // add key that every 3 months will change
+    key: `quarterlies-index-${new Date().getFullYear()}-${Math.floor(new Date().getMonth() / 3)}`,
+  },
   opts: {
     transform: (data: Quarterly[]) => {
       const groups: QuarterlyWithGroup[] = []
