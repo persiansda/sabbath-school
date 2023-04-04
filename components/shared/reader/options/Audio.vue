@@ -62,7 +62,7 @@ function onEnded() {
       </li>
     </ul>
   </div>
-  <SEmpty v-else />
+  <img v-else src="/assets/images/empty-folder.jpg" alt="empty">
 </template>
 
 <style lang="scss">
