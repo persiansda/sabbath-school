@@ -70,7 +70,7 @@ const openIntroduction = ref(false)
         </div>
       </div>
     </div>
-    <div class="mb-4 grid grid-cols-2">
+    <div class="grid grid-cols-2">
       <div v-for="feature in data.quarterly.features" :key="`${data.quarterly.path}-feature-${feature.name}`" class="mb-4">
         <div class="flex items-center">
           <SProImg :src="feature.image" :alt="feature.name" class="h-3 mr-2" />
