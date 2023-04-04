@@ -67,6 +67,7 @@ export default defineNuxtConfig({
       apiURL: process.env.API_URL,
       pspdfKey: process.env.PSPDF_KEY,
       googleClientId: process.env.GOOGLE_CLIENT_ID,
+      siteUrl: 'https://sabbath-school-nuxt-ogpi.vercel.app',
     },
   },
 
