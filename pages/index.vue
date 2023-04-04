@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Quarterly, QuarterlyWithGroup } from '~/types/quarterly.type'
+
 const localePath = useLocalePath()
 const { t } = useI18n()
 const route = useRoute()

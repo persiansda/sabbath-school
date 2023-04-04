@@ -21,7 +21,7 @@ defineProps({
 
 const emit = defineEmits(['close'])
 
-const close = () => {
+function close() {
   emit('close')
 }
 </script>
@@ -36,7 +36,7 @@ const close = () => {
         <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
           <HeadlessTransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leave-from="opacity-100 translate-y-0 sm:scale-100" leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
             <HeadlessDialogPanel :class="{ 'xl:max-w-3xl': large }" class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full" style="-webkit-mask-image: -webkit-radial-gradient(white, black);">
-              <button ref="cancelButtonRef" type="button" class="fixed outline-none top-5 right-5" @click="close()">
+              <button type="button" class="fixed outline-none top-5 right-5" @click="close()">
                 <Icon name="mdi:close" class="text-gray-600 hover:rotate-90 transition-all" aria-hidden="true" />
               </button>
               <div :class="noPadding ? '' : 'px-4 pt-5 pb-4 sm:p-6 sm:pb-4'">

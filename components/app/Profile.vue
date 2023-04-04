@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useAuthStore } from '~/store/auth'
+
 const authStore = useAuthStore()
 const openLogin = ref(false)
 </script>

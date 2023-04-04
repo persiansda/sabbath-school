@@ -32,7 +32,7 @@ onMounted(async () => {
           <SplideSlide v-for="clip in artist.clips" :key="`video_clip_${clip.id}`">
             <div class="cursor-pointer" @click="currentVideo = clip">
               <div :class="{ 'border-2 border-ss-primary': currentVideo && currentVideo.src === clip.src && playing }" :style="`background-image:url('${clip.thumbnail}')`" class="rounded h-24 w-48 bg-cover bg-center relative">
-                <div v-if="currentVideo && currentVideo.src === clip.src && playing" class="absolute top-3 right-2 shrink-0 stretch-0 relative rotate-180 h-5">
+                <div v-if="currentVideo && currentVideo.src === clip.src && playing" class="absolute top-3 right-2 shrink-0 stretch-0 rotate-180 h-5">
                   <div class="flex">
                     <div class="playing-icon playing-icon-slow ml-0.5 h-1 w-1 bg-white" />
                     <div class="playing-icon playing-icon-medium ml-0.5 h-2 w-1 bg-white" />

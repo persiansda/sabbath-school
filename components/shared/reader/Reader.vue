@@ -36,7 +36,7 @@ const verse = computed(() => {
 
 const endpoint = `${locale.value}-${route.params.quarterly}-${route.params.week}-${route.params.day}`
 
-const loadScript = (url: string) => {
+function loadScript(url: string) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.setAttribute('src', url)
@@ -46,9 +46,9 @@ const loadScript = (url: string) => {
   })
 }
 
-const login = () => {}
+function login() {}
 
-const onMouseup = () => {
+function onMouseup() {
   const selection = window.getSelection()
   showContextMenu.value = false
 
@@ -77,7 +77,7 @@ const onMouseup = () => {
 
 const highLighColors = ['orange', 'yellow', 'green', 'blue']
 
-const initHighlighter = () => {
+function initHighlighter() {
   rangy.init()
   window.highlighter = rangy.createHighlighter()
 
@@ -137,7 +137,7 @@ const initHighlighter = () => {
   setHighlights()
 }
 
-const saveHighlights = async (highlights: string) => {
+async function saveHighlights(highlights: string) {
   // TODO: fix auth store, havn't been able work with gogole api in local
   if (isLoggedIn)
     return
@@ -153,7 +153,7 @@ const saveHighlights = async (highlights: string) => {
   catch (e) {}
 }
 
-const onHighlightComplete = () => {
+function onHighlightComplete() {
   const highlights = window.highlighter.serialize()
   const highLighParts = highlights.split('|')
   const module = highLighParts[0]
@@ -174,7 +174,7 @@ const onHighlightComplete = () => {
   }
 }
 
-const clearSelection = () => {
+function clearSelection() {
   if (window.getSelection) {
     if (window.getSelection().empty) { // Chrome
       window.getSelection().empty()
@@ -188,21 +188,21 @@ const clearSelection = () => {
   }
 }
 
-const unHighlightSelection = () => {
+function unHighlightSelection() {
   window.highlighter.unhighlightSelection()
   clearSelection()
   showContextMenu.value = false
   onHighlightComplete()
 }
 
-const highlightSelection = (color: string) => {
+function highlightSelection(color: string) {
   window.highlighter.highlightSelection(`highlight_${color}`)
   clearSelection()
   showContextMenu.value = false
   onHighlightComplete()
 }
 
-const setHighlights = () => {
+function setHighlights() {
   let highlights = ''
 
   if (!highlights.length)
@@ -239,7 +239,7 @@ const setHighlights = () => {
   }
 }
 
-const loadComments = async () => {
+async function loadComments() {
   // TODO: fix auth store, havn't been able work with gogole api in local
   try {
     // const { data } = await $fetch<any>('/highlights/en-2023-01-01-01', {
@@ -263,7 +263,7 @@ const loadComments = async () => {
   }
 }
 
-const saveComments = async (comment: string, id: string) => {
+async function saveComments(comment: string, id: string) {
   // TODO: fix auth store, havn't been able work with gogole api in local
   if (!isLoggedIn)
     return

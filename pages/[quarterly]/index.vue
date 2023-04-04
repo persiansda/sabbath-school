@@ -13,7 +13,6 @@ const props = defineProps({
 DayJS.extend(DayJSIsBetween)
 
 const localePath = useLocalePath()
-const { t } = useI18n()
 
 const lessonTarget = computed(() => {
   if (props.data.lessons.length === 0)

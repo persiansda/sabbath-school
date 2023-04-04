@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useReaderStore } from '~/store/reader'
-import { FontFamily } from '~/types/reader.type'
+import type { FontFamily } from '~/types/reader.type'
 
 const { setFontSize, options, setFontFamily } = useReaderStore()
 const colorMode = useColorMode()

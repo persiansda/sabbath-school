@@ -18,7 +18,7 @@ onMounted(() => {
     currentAudio.value = firstAudio.value ?? computedAudios.value[0]
 })
 
-const onEnded = () => {
+function onEnded() {
   const index = computedAudios.value.findIndex(audio => audio.src === currentAudio.value.src)
   if (index < computedAudios.value.length - 1)
     currentAudio.value = computedAudios.value[index + 1]

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useReaderStore } from '~/store/reader'
 import type { ShowQuarterly } from '~/types/quarterly.type'
+
 const readerStore = useReaderStore()
 const localePath = useLocalePath()
 const { t } = useI18n()

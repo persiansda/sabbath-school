@@ -1,6 +1,7 @@
 <!-- TODO: rewrite with composion api -->
 <script>
 import PSPDFKit from 'pspdfkit'
+
 const TOOLBAR_ITEMS_ALLOWED = ['zoom-in', 'zoom-out', 'zoom-mode', 'spacer', 'ink', 'note', 'annotate', 'text-highlighter', 'layout-mode', 'search']
 
 export default {
