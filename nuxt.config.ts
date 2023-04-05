@@ -45,9 +45,16 @@ export default defineNuxtConfig({
     fonts: [
       'Noto+Sans+Hebrew:400',
       'Noto+Sans+Bengali:400',
-      // 'Noto+Sans+Hong+Kong:400',
+      'Noto+Sans+Thai:400',
+      'Noto+Sans+Kr:400',
+      'Noto+Sans+Georgian:400',
+      'Mukta+Vaani:400',
+      'Padauk:400',
       'Roboto:400',
       'Cairo:400',
+      'Khmer:400',
+      'Hind:400',
+      // add support: te, ta, si, or, ml, lo, kn, hy
     ],
   },
 
