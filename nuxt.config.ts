@@ -41,6 +41,16 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
   ],
 
+  ogImage: {
+    fonts: [
+      'Noto+Sans+Hebrew:400',
+      'Noto+Sans+Bengali:400',
+      // 'Noto+Sans+Hong+Kong:400',
+      'Roboto:400',
+      'Cairo:400',
+    ],
+  },
+
   i18n,
 
   // pwa,
@@ -67,7 +77,7 @@ export default defineNuxtConfig({
       apiURL: process.env.API_URL,
       pspdfKey: process.env.PSPDF_KEY,
       googleClientId: process.env.GOOGLE_CLIENT_ID,
-      siteUrl: 'https://sabbath-school-nuxt-ogpi.vercel.app',
+      // siteUrl: 'https://sabbath-school-nuxt-ogpi.vercel.app',
     },
   },
 

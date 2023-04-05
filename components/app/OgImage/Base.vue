@@ -14,24 +14,22 @@ const props = defineProps({
   week: Object as PropType<Lesson>,
   day: Object as PropType<Day>,
 })
-const containerStyles = {
-  padding: '10px 50px',
-  backgroundImage: `linear-gradient(to bottom right, ${props.quarterly!.color_primary}, ${props.quarterly!.color_primary_dark})`,
-}
 
 const textShadow = '0px 0px 13px rgba(0,0,0, 0.7)'
 const boxShadow = '0px 0px 17px rgba(0,0,0, 0.3)'
 const imgWhite = 'brightness(0) invert(1)'
+
+const { localeProperties } = useI18n()
 </script>
 
 <template>
-  <div :style="containerStyles" class="relative w-full h-full flex items-center text-white border-2 border-white">
-    <div :style="{ paddingTop: '100px', position: 'relative', width: '80%', paddingLeft: '250px' }">
+  <div dir="rtl" :style="{ backgroundImage: `linear-gradient(to bottom right, ${props.quarterly!.color_primary}, ${props.quarterly!.color_primary_dark})` }" class="relative w-full h-full flex items-center text-white border-2 border-white">
+    <div :style="{ paddingTop: '100px', position: 'relative', width: '90%', paddingLeft: '350px' }">
       <div class="relative flex">
         <div :style="{ textShadow }" class="font-bold flex flex-row justify-between items-center text-3xl">
           {{ title }}
         </div>
-        <p v-if="description" :style="{ fontSize: '17px', lineHeight: '1.5em', textShadow }" class="text-gray-300" v-html="description" />
+        <p v-if="description" :style="{ fontSize: '17px', textShadow, direction: localeProperties.dir === 'rtl' ? 'rtl' : 'ltr', textAlign: localeProperties.dir === 'rtl' ? 'right' : 'left' }" class="text-gray-300" v-html="description" />
         <slot name="body" />
         <img class="rounded" :style="{ position: 'absolute', left: '-300px', boxShadow }" :src="quarterly?.cover" width="250">
       </div>
