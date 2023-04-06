@@ -8,7 +8,7 @@ const route = useRoute()
 const { data, pending } = useApiFetch<any>('/quarterlies/index.json', {
   fetchOptions: {
     // add cache key that every 3 months will change
-    key: `quarterlies:index:${new Date().getFullYear()}-${Math.floor(new Date().getMonth() / 3)}`,
+    key: `quarterlies:index:${new Date().getFullYear()}-${Math.floor(new Date().getMonth() / 3 + 1)}`,
   },
   opts: {
     transform: (data: Quarterly[]) => {
