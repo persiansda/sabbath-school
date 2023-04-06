@@ -59,7 +59,8 @@ watchEffect(() => {
           <div :class="{ 'md:text-left': $i18n.localeProperties.dir === 'ltr' }" class="sticky top-5 grid grid-cols-2 md:block w-11/12 md:w-auto ml-4 mr-3 md:ml-0">
             <div :class="{ 'mr-5': $i18n.localeProperties.dir === 'ltr' }">
               <NuxtLink :title="data.quarterly.title" :to="localePath({ name: 'quarterly', params: { quarterly: data.quarterly.id } })" class="w-4/12 mx-auto md:w-auto hover:underline">
-                <SProImg :src="data.quarterly.cover" :alt="data.quarterly.title" :class="{ 'md:mr-4': $i18n.localeProperties.dir === 'ltr' }" class="w-40 rounded shadow-gray-400 shadow-md" />
+                <img :src="data.quarterly.cover" :alt="data.quarterly.title" :class="{ 'md:mr-4': $i18n.localeProperties.dir === 'ltr' }" class="quarterlyCover bg-gray-200 rounded h-56 mb-5 w-40 shadow-md shadow-gray-400">
+                <!-- animate-pulse -->
                 <span class="mt-4 font-bold text-lg text-gray-600 block w-3/4">
                   {{ data.quarterly.title }}
                 </span>
@@ -96,5 +97,9 @@ watchEffect(() => {
   top: 10%;
   left: 2%;
   cursor: pointer;
+}
+
+.quarterlyCover {
+  view-transition-name: selected-quarterly;
 }
 </style>

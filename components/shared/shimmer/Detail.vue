@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-row flex-wrap my-10">
     <div class="flex-initial w-64 m-auto md:m-0">
-      <div class="animate-pulse bg-gray-200 rounded h-64 w-48 mb-5" />
+      <div class="quarterlyCover animate-pulse bg-gray-200 rounded h-56 w-40 mb-5" />
       <div class="animate-pulse mt-3 bg-gray-200 rounded h-3 w-2/3" />
       <div class="animate-pulse mt-3 bg-gray-200 rounded h-3 w-1/3" />
       <div class="animate-pulse mt-3 bg-gray-200 rounded h-3 w-2/3" />

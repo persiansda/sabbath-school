@@ -119,5 +119,8 @@ const groups = computed<QuarterlyWithGroup[]>(() => {
 </template>
 
 <style lang="scss">
-
+img.currentQuarterly {
+  view-transition-name: selected-quarterly;
+  contain: layout;
+}
 </style>

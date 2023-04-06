@@ -8,15 +8,24 @@ defineProps({
   },
 })
 const localePath = useLocalePath()
+
+const active = useState()
 </script>
 
 <template>
   <NuxtLink
     :to="localePath({ name: 'quarterly', params: { quarterly: item.id } })"
     class="max-w-ss-cover"
+    @click="active = item.id"
   >
-    <SProImg :src="item.cover" :alt="item.title" :height="355" class="min-w-ss-cover max-w-ss-cover max-h-ss-cover min-h-ss-cover object-cover object-top mb-4 rounded shadow-gray-400 shadow-lg" />
-    <p class="mt-2 mb-2 text-xl font-bold">
+    <SProImg
+      :src="item.cover" :alt="item.title" :height="355"
+      :class="{ currentQuarterly: active === item.id }"
+      class="min-w-ss-cover max-w-ss-cover max-h-ss-cover min-h-ss-cover object-cover object-top mb-4 rounded shadow-gray-400 shadow-lg"
+    />
+    <p
+      class="mt-2 mb-2 text-xl font-bold"
+    >
       {{ item.title }}
     </p>
     <p class="uppercase text-gray-500 text-xs">
