@@ -4,6 +4,16 @@ import { appAuthor, appGooglePlayId, appGooglePlayName, appGooglePlayUrl, appThe
 const gradient = 'linear-gradient(to right, #2e5797, #3b82f6)'
 const { t } = useI18n()
 
+useHead({
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/assets/images/favicon.ico',
+    },
+  ],
+})
+
 useSeoMeta({
   titleTemplate: `${t('app.title')}`,
   title: `${t('app.title')}`,
