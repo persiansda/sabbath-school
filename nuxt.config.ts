@@ -2,6 +2,10 @@ import { i18n } from './config/i18n'
 
 export default defineNuxtConfig({
 
+  devtools: {
+    enabled: true,
+  },
+
   extends: [
     'nuxt-seo-kit',
   ],
@@ -34,7 +38,6 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
-    '@nuxt/devtools',
     // '@vite-pwa/nuxt',
     'nuxt-headlessui',
     '@nuxtjs/color-mode',
@@ -47,7 +50,7 @@ export default defineNuxtConfig({
       'Noto+Sans+Hebrew:400',
       'Noto+Sans+Bengali:400',
       'Noto+Sans+Thai:400',
-      'Noto+Sans+Kr:400',
+      // 'Noto+Sans+Kr:400',
       'Noto+Sans+Georgian:400',
       'Mukta+Vaani:400',
       'Padauk:400',
