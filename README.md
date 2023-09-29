@@ -1,6 +1,6 @@
 # Sabbath School Web
 
-[![Sababth School Web](./public/assets/images/cover.jpg)](#)
+[![Sabbath School Web](./public/assets/images/cover.jpg)](#)
 
 > This is a web app for the Sabbath School lessons. It is built with [Nuxt 3](https://nuxt.com/).
 
@@ -50,7 +50,7 @@ yarn translate
 ## Todo
 
 - [ ] PWA support
-- [ ] Convert all otpion api's to composition api
+- [ ] Convert all option api's to composition api
 - [ ] Add more features
 - [ ] Add global color mode
 
