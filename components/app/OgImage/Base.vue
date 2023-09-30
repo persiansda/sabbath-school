@@ -30,7 +30,7 @@ const { localeProperties } = useI18n()
           {{ title }}
         </div>
         <p v-if="description" :style="{ fontSize: '17px', textShadow, direction: localeProperties.dir === 'rtl' ? 'rtl' : 'ltr', textAlign: localeProperties.dir === 'rtl' ? 'right' : 'left' }" class="text-gray-300" v-html="description" />
-        <slot name="body" />
+        <img v-if="week?.cover" class="rounded" :src="week.cover" :style="{ boxShadow, maxWidth: '100%', maxHeight: '270px', objectFit: 'cover' }">
         <img class="rounded" :style="{ position: 'absolute', left: '-300px', boxShadow }" :src="quarterly?.cover" width="250">
       </div>
     </div>

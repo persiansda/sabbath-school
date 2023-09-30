@@ -41,11 +41,18 @@ useSeoMeta({
   title: props.week?.title ?? t('error.404.title'),
   description: wordSubstring(props.week?.title ?? t('error.404.message')),
 })
+
+defineOgImage({
+  component: 'AppOgImageBase',
+  path: route.path,
+  quarterly: props.quarterly,
+  week: props.week,
+  day: day.value,
+})
 </script>
 
 <template>
   <div class="grid">
-    <OgImageStatic component="AppOgImageDay" :quarterly="quarterly" :week="week" :day="day" />
     <SShimmerReader v-if="pending" />
     <div v-else>
       <SPdf v-if="(week.pdfOnly || showPdf) && pdfs?.length" :pdfs="pdfs" :lesson="weekId" />

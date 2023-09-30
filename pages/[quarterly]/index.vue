@@ -10,6 +10,8 @@ const props = defineProps({
   },
 })
 
+const route = useRoute()
+
 DayJS.extend(DayJSIsBetween)
 
 const localePath = useLocalePath()
@@ -29,11 +31,16 @@ const lessonTarget = computed(() => {
 })
 
 const openIntroduction = ref(false)
+
+defineOgImage({
+  component: 'AppOgImageBase',
+  path: route.path,
+  quarterly: props.data.quarterly,
+})
 </script>
 
 <template>
   <div class="mt-4 md:ml-8 md:mr-8 md:mt-0">
-    <OgImageStatic component="AppOgImagePage" :quarterly="data.quarterly" />
     <p class="mb-4 text-3xl font-bold">
       {{ data.quarterly.title }}
     </p>
