@@ -31,10 +31,4 @@ svg {
   height: 1.3rem;
   width: 1.3rem;
 }
-
-.dark-mode {
-  body {
-    // background: #00c7c7;
-  }
-}
 </style>
