@@ -1,11 +1,6 @@
 <script lang="ts" setup>
-const scrollPosition = ref<number>(0)
-
-function handleScroll() {
-  return scrollPosition.value = window.scrollY
-}
-onMounted(() => window.addEventListener('scroll', handleScroll))
-onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+const scrollPosition = ref(0)
+useEventListener('scroll', () => scrollPosition.value = window.scrollY)
 </script>
 
 <template>

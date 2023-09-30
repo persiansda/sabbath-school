@@ -5,7 +5,7 @@ const localePath = useLocalePath()
 const { t } = useI18n()
 const route = useRoute()
 
-const { data, pending } = useApiFetch<any>('/quarterlies/index.json', {
+const { data, pending, error } = useApiFetch<any>('/quarterlies/index.json', {
   fetchOptions: {
     // add cache key that every 3 months will change
     key: `quarterlies:index:${new Date().getFullYear()}-${Math.floor(new Date().getMonth() / 3 + 1)}`,
@@ -84,36 +84,39 @@ const groups = computed<QuarterlyWithGroup[]>(() => {
   <div class="my-10">
     <SShimmerCardList v-if="pending" />
     <template v-else>
-      <div v-for="group in groups" :key="group.slug" class="mb-10 last:mb-10">
-        <div class="mb-4 flex flex-col sm:flex-row justify-between items-center">
-          <p class="text-sm font-bold uppercase text-ss-primary">
-            {{ group.name }}
-          </p>
-          <template v-if="group.slug !== t('app.uncategorized')">
-            <NuxtLink
-              v-if="route.query.group"
-              :to="localePath({ name: 'index' })"
-              class="pl-2 pr-1 py-1.5 rounded hover:bg-ss-primary hover:text-white text-ss-primary flex items-center justify-between"
-            >
-              <Icon name="mdi:chevron-left" />
-              <span class="text-sm">
-                {{ $t('app.back') }}
-              </span>
-            </NuxtLink>
-            <NuxtLink
-              v-else
-              :to="localePath({ name: 'index', query: { group: group.slug } })"
-              class="pl-2 pr-1 py-1.5 rounded hover:bg-ss-primary hover:text-white text-ss-primary flex items-center justify-between"
-            >
-              <span class="text-sm">{{ $t('app.all') }} ({{ group.total }})</span>
-              <Icon name="mdi:chevron-right" />
-            </NuxtLink>
-          </template>
+      <SError v-if="error" :redirect-path="null" :back="false" code="500" title="Something went wrong..." :message="error.message" />
+      <template v-else>
+        <div v-for="group in groups" :key="group.slug" class="mb-10 last:mb-10">
+          <div class="mb-4 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-sm font-bold uppercase text-ss-primary">
+              {{ group.name }}
+            </p>
+            <template v-if="group.slug !== t('app.uncategorized')">
+              <NuxtLink
+                v-if="route.query.group"
+                :to="localePath({ name: 'index' })"
+                class="pl-2 pr-1 py-1.5 rounded hover:bg-ss-primary hover:text-white text-ss-primary flex items-center justify-between"
+              >
+                <Icon name="mdi:chevron-left" />
+                <span class="text-sm">
+                  {{ $t('app.back') }}
+                </span>
+              </NuxtLink>
+              <NuxtLink
+                v-else
+                :to="localePath({ name: 'index', query: { group: group.slug } })"
+                class="pl-2 pr-1 py-1.5 rounded hover:bg-ss-primary hover:text-white text-ss-primary flex items-center justify-between"
+              >
+                <span class="text-sm">{{ $t('app.all') }} ({{ group.total }})</span>
+                <Icon name="mdi:chevron-right" />
+              </NuxtLink>
+            </template>
+          </div>
+          <div class="ss-grid">
+            <SCard v-for="quarterly in group.quarterlies" :key="quarterly.path" :item="quarterly" />
+          </div>
         </div>
-        <div class="ss-grid">
-          <SCard v-for="quarterly in group.quarterlies" :key="quarterly.path" :item="quarterly" />
-        </div>
-      </div>
+      </template>
     </template>
   </div>
 </template>

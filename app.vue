@@ -36,9 +36,9 @@ useSeoMeta({
 
 <template>
   <Html>
-    <Head>
+    <!-- <Head>
       <SeoKit :language="$i18n.locale" />
-    </Head>
+    </Head> -->
     <Body>
       <NuxtScrollIndicator :color="gradient" shadow="0px 0px 3px #2e5797" />
       <NuxtLoadingIndicator :color="gradient" />

@@ -28,5 +28,6 @@
     "node_modules": true,
     ".nuxt": true,
     ".output": true,
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

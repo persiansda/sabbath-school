@@ -13,7 +13,7 @@ if (process.dev)
 <template>
   <NuxtLayout>
     <slot>
-      <SError :code="`${error.statusCode}`" :title="`${error.name}`" :message="error.message ?? 'Something went wrong'" redirect-text="Go Home" />
+      <SError :code="`${error.statusCode}`" :title="`${error.name}`" :message="error.message ?? 'Something went wrong'" />
     </slot>
   </NuxtLayout>
 </template>

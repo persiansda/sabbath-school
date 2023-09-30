@@ -9,5 +9,5 @@ defineProps({
 </script>
 
 <template>
-  <SError :centered="centered" code="404" :title="$t('error.404.title')" :message="$t('error.404.message')" :redirect-text="$t('home.index')" />
+  <SError :centered="centered" code="404" :title="$t('error.404.title')" :message="$t('error.404.message')" />
 </template>

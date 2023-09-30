@@ -1,3 +1,4 @@
+import { defineNuxtConfig } from 'nuxt/config'
 import { i18n } from './config/i18n'
 
 export default defineNuxtConfig({
@@ -6,9 +7,9 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-  extends: [
-    'nuxt-seo-kit',
-  ],
+  // extends: [
+  //   'nuxt-seo-kit',
+  // ],
 
   app: {
     keepalive: true,
@@ -24,6 +25,7 @@ export default defineNuxtConfig({
   experimental: {
     componentIslands: true,
     viewTransition: true,
+    headNext: true,
   },
 
   components: [
@@ -37,7 +39,9 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-icon',
     '@pinia/nuxt',
+    '@vueuse/nuxt',
     '@nuxtjs/i18n',
+    'nuxt-og-image',
     // '@vite-pwa/nuxt',
     'nuxt-headlessui',
     '@nuxtjs/color-mode',

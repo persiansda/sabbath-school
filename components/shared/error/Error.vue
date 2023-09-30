@@ -1,38 +1,20 @@
 <script lang="ts" setup>
-defineProps({
-  code: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-  message: {
-    type: String,
-    required: true,
-  },
-  redirectBack: {
-    type: Boolean,
-    default: true,
-    required: false,
-  },
-  redirectText: {
-    type: String,
-    default: 'Go Home',
-    required: false,
-  },
-  redirect: {
-    type: String,
-    default: '/',
-    required: false,
-  },
-  centered: {
-    type: Boolean,
-    default: true,
-    required: false,
-  },
+withDefaults(defineProps<{
+  code: string
+  title: string
+  message: string
+  redirectPath?: string | null
+  redirectText?: string
+  centered?: boolean
+  back?: boolean
+}>(), {
+  redirectPath: 'index',
+  redirectText: 'home.index',
+  centered: true,
+  back: true,
 })
+
+const { t } = useI18n()
 
 const localePath = useLocalePath()
 </script>
@@ -48,17 +30,27 @@ const localePath = useLocalePath()
         </h1>
       </div>
       <div class="ss-detail">
-        <h2>{{ title }}</h2>
+        <h2>
+          {{ title }}
+        </h2>
         <p>
           {{ message }}
         </p>
       </div>
     </main>
     <div class="flex justify-center mt-5">
-      <NuxtLink :to="localePath({ name: 'index' })" class="bg-ss-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">
-        {{ redirectText }}
+      <NuxtLink
+        v-if="redirectPath"
+        :to="localePath({ name: redirectPath })"
+        class="bg-ss-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+      >
+        {{ t(redirectText) }}
       </NuxtLink>
-      <button v-if="redirectBack" class="bg-ss-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" @click="$router.back()">
+      <button
+        v-if="back"
+        class="bg-ss-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+        @click="$router.back()"
+      >
         {{ $t('app.back') }}
       </button>
     </div>
