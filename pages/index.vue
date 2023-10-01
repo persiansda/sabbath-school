@@ -78,6 +78,17 @@ const groups = computed<QuarterlyWithGroup[]>(() => {
     quarterlies: group.slug === t('app.uncategorized') ? group.quarterlies : group.quarterlies.slice(0, 4),
   }))
 })
+
+const runtime = useRuntimeConfig()
+
+useSeoMeta({
+  description: t('app.description'),
+  ogImage: `${runtime.public.baseURL}/assets/images/cover.jpg`,
+  ogImageAlt: t('app.title'),
+  twitterImage: `${runtime.public.baseURL}/assets/images/cover.jpg`,
+  twitterImageAlt: t('app.title'),
+  twitterDescription: t('app.description'),
+})
 </script>
 
 <template>
