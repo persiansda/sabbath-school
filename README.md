@@ -53,10 +53,20 @@ pnpm translate
 - [ ] Convert all option api's to composition api
 - [ ] Add global color mode
 
-## License
+## Used Stack
 
-[MIT License](./LICENSE)
+- Nuxt
+- Pinia
+- Vueuse
+- Nuxt SEO
+- Nuxt I18n
+- HeadlessUI
+- TailwindCSS
 
 ## Contributing
 
-If you have any suggestions or find any bugs, please open an issue or a pull request.
+If you have any suggestions or find any bugs, please open an [issue](https://github.com/persiansda/sabbath-school/issues/new) or a pull request.
+
+## License
+
+[MIT License](./LICENSE)
