@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
   experimental: {
     componentIslands: true,
-    viewTransition: true,
+    viewTransition: false,
     headNext: true,
   },
 
