@@ -2,7 +2,6 @@ import { defineNuxtConfig } from 'nuxt/config'
 import { i18n } from './config/i18n'
 
 export default defineNuxtConfig({
-
   devtools: {
     enabled: true,
   },
@@ -37,7 +36,7 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    'nuxt-icon',
+    '@nuxt/icon',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
