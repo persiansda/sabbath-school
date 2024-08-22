@@ -37,10 +37,10 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/icon',
+    '@nuxtjs/seo',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
-    'nuxt-og-image',
     // '@vite-pwa/nuxt',
     'nuxt-headlessui',
     '@nuxtjs/color-mode',
@@ -91,7 +91,6 @@ export default defineNuxtConfig({
       apiURL: process.env.API_URL,
       pspdfKey: process.env.PSPDF_KEY,
       googleClientId: process.env.GOOGLE_CLIENT_ID,
-      // siteUrl: 'https://sabbath-school-nuxt-ogpi.vercel.app',
     },
   },
 
